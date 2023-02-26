@@ -8,14 +8,7 @@ const getPublished =  () => (dispatch) => {
 })
 
 
-  // fetch("http://localhost:3000/searchRoles", {
-  //   body: "{\n  \"from\" : 0, \"size\" : 20,\n  \"query\": {\n    \"bool\": {\"must\" : [{\"term\":{\"entityState.itemID\":5 } }] }\n  }\n}",
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   },
-  //   method: "POST"
-  // })
-  //.then((response) => { return response.json()})
+ 
   .then(list => {
       console.log(list)
     //console.log(list.hits.hits)

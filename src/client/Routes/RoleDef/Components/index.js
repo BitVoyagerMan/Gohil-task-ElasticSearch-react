@@ -43,7 +43,6 @@ class RoleDefComponent extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     roleDefs: state.data
   };

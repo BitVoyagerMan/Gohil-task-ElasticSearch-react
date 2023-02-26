@@ -60,30 +60,30 @@ class RoleListComponent extends React.Component<RoleListProp, RoleListState> {
       key: 'id',
       className: '',
       sortBy: 'id',
-      style: { width: '100px' },
+      style: { width: '10vw' },
     },
     {
       label: 'Name',
       key: 'name',
       className: '',
       sortBy: 'keyword',
-      style: { width: '160px' },
+      style: { width: '20vw' },
     }, {
       label: 'Description',
       key: 'description',
       noSort: true,
-      style: { width: '300px' },
+      style: { width: '30vw' },
     }, {
       label: 'Status',
       key: 'entityState',
-      style: { width: '120px' },
+      style: { width: '20vw' },
       sortBy: 'itemID',
       injectBody: (value: IRoleDef) =>
         <Badge working={value.processing} status={AllowedEntityStatusColor[value.processing ? 8 : getBadgeStatus(value)]}>{value.processing ? value.processing : getStatus(value)}</Badge>,
     }, {
       label: 'Type',
       key: 'allowedMemberTypes',
-      style: { width: '215px' },
+      style: { width: '10vw' },
       sortBy: 'itemID',
       injectBody: (value: IRoleDef) => getAllowedMemberType(value.allowedMemberTypes),
     },
@@ -188,7 +188,7 @@ class RoleListComponent extends React.Component<RoleListProp, RoleListState> {
     );
 
     return (
-      <FlexBox>
+      <FlexBox style = {{width:"100%"}}>
         <Column medium="4-4">
           {
             loadingRole ?
@@ -197,7 +197,7 @@ class RoleListComponent extends React.Component<RoleListProp, RoleListState> {
               </div> : null
           }
 
-          <div className={theme.pageContainer} style={{justifyItems: 'center'}}>
+          <div className={theme.pageContainer}  style={{justifyItems: 'center', width:"100%"}}>
             <Heading element="h2" theme={CommonStyle}>Roles</Heading>
 
             <FlexBox
@@ -278,5 +278,4 @@ const mapDispatchToProps = {
  
   getMyFunc
 };
-// export default themr(ROLE, baseTheme)(RoleListComponent) as ThemedComponentClass<RoleListProp, RoleListState>;
 export default connect(null, mapDispatchToProps)(themr(ROLE, baseTheme)(RoleListComponent) as ThemedComponentClass<RoleListProp, RoleListState>);
